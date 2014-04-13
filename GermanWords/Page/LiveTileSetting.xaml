@@ -1,0 +1,96 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="GermanWords.Page.LiveTileSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    d:DesignHeight="768" d:DesignWidth="480"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <phone:PhoneApplicationPage.Foreground>
+        <SolidColorBrush Color="Black"/>
+    </phone:PhoneApplicationPage.Foreground>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/images/settingBg.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="德语词卡" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFDE9696"/>
+            <TextBlock Text="磁贴设定" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFDE9696"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Orientation="Vertical" Margin="12,0,12,0">
+            <TextBlock Name="TextBlock_NoBackgroundTaskPrompt"
+                       Margin="0,0,0,20" TextWrapping="Wrap" Foreground="Red"
+                       Text="*后台任务未打开。进入“设置”-“后台任务”-“德语词卡”，勾选“当我下次打开此项应用时，允许打开其后台任务”。" />
+            <toolkit:ToggleSwitch Name="ToggleSwitch_MainTile" Margin="0,0,0,50"
+                                    Checked="ToggleSwitch_MainTile_Checked"
+                                    Unchecked="ToggleSwitch_MainTile_Unchecked" Foreground="#FF979797" SwitchForeground="#FF00C5FF" Background="#FF979797">
+                <toolkit:ToggleSwitch.Header>
+                    <TextBlock Text="主磁贴背面显示学习时间" Foreground="#FF979797"/>
+                </toolkit:ToggleSwitch.Header>
+            </toolkit:ToggleSwitch>
+
+            <Button Content="创建动态单词磁贴" Width="300" HorizontalAlignment="Left"
+                    Click="Button_Create_Click" Foreground="#FF979797" BorderBrush="#FF979797"/>
+            <Button Name="Button_Refresh" Content="现在更新" Width="300" HorizontalAlignment="Left"
+                    Click="Button_Refresh_Click" BorderBrush="#FF979797" Foreground="#FF979797"/>
+            <Grid Margin="10,50,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0"
+                            TextAlignment="Right" Foreground="#FF979797"
+                            FontSize="30" Text="现有动态磁贴" />
+                <TextBlock Grid.Column="1" Grid.Row="0" Name="TextBlock_SecondaryTileNumber" Margin="20,0,0,0"
+                            TextAlignment="Right" Foreground="{StaticResource PhoneAccentBrush}"
+                            FontSize="50" Text="7" />
+                <TextBlock Grid.Column="0" Grid.Row="1"
+                            TextAlignment="Right" Foreground="#FF979797"
+                            FontSize="30" Text="最后更新时间" />
+                <TextBlock Grid.Column="1" Grid.Row="1"  Name="TextBlock_LastUpdateTime"  Margin="20,0,0,0"
+                            TextAlignment="Right" Foreground="{StaticResource PhoneAccentBrush}"
+                            FontSize="50" Text="18:34" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

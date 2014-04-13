@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="GermanWords.Page.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480">
+    <phone:PhoneApplicationPage.Foreground>
+        <SolidColorBrush Color="#FF959292"/>
+    </phone:PhoneApplicationPage.Foreground>
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/images/settingBg.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="德语词卡" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FFDE9696"/>
+            <TextBlock Text="关于" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFDE9696"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="20,0,20,0">
+            <TextBlock Text="版本：1.4.7" />
+            <TextBlock Text="发布时间：2014/4/8" />
+            <TextBlock Text="编码：Nikos Liu and Jack Liu" />
+
+            <TextBlock Margin="0,20,0,0" TextWrapping="Wrap"
+                    Text="v1.4.7 更新" />
+            <TextBlock Text="   - 修复了德国之声内容空白的问题" />
+
+            <TextBlock Margin="0,20,0,0" TextWrapping="Wrap"
+                    Text="“德语词卡 for Windows Phone”是Nikos的毕业设计项目。该应用配合《新求精德语强化教程》使用，帮助德语学习者随时随地记忆单词。"/>
+            <TextBlock Margin="0,20,0,0" TextWrapping="Wrap"
+                    Text="如果您对该应用有任何的建议，欢迎与作者联系。我们会考虑您的建议，并在下一个版本中改进，力求为德语学习者创造更好的应用。"/>
+
+            <TextBlock Margin="0,20,0,0"  TextWrapping="Wrap"
+                    Text="Nikos's E-mail: xinhuliu@gmail.com"/>
+            <TextBlock Margin="0,0,0,0"  TextWrapping="Wrap"
+                    Text="Jack's E-mail: jacklandrin@hotmail.com"/>
+            <TextBlock  TextWrapping="Wrap"
+                    Text="新浪微博: @心湖喵喵 or @倾剑飞血"/>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

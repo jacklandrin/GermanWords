@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{271C3328-99DB-48FE-9E5A-9C44B20FE442}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GermanWordsClassLibrary</RootNamespace>
+    <AssemblyName>GermanWordsClassLibrary</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SinaBase">
+      <HintPath>C:\Users\Nikos\Desktop\WeiboTest\WeiboTest\Bin\Debug\SinaBase.dll</HintPath>
+    </Reference>
+    <Reference Include="WeiboSdk">
+      <HintPath>C:\Users\Nikos\Desktop\WeiboTest\WeiboTest\Bin\Debug\WeiboSdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseData.cs" />
+    <Compile Include="Class\Word.cs" />
+    <Compile Include="Class\WordSource.cs" />
+    <Compile Include="Database\StarredWordDataContext.cs" />
+    <Compile Include="Database\StarredWordItem.cs" />
+    <Compile Include="Database\StarredWordOperations.cs" />
+    <Compile Include="Database\StudyHistoryDataContext.cs" />
+    <Compile Include="Database\StudyHistoryItem.cs" />
+    <Compile Include="Database\StudyHistoryOperations.cs" />
+    <Compile Include="Helper\BasicHelper.cs" />
+    <Compile Include="Helper\IsolatedStorageFileHelper.cs" />
+    <Compile Include="Helper\IsolatedStorageSettingsHelper.cs" />
+    <Compile Include="Helper\UIHelper.cs" />
+    <Compile Include="Helper\UserControlHelper.cs" />
+    <Compile Include="Helper\WordFileHelper.cs" />
+    <Compile Include="Helper\WordSourceHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Speech.cs" />
+    <Compile Include="UserControl\LiveTilePicture\LiveTileAbbrPicture.xaml.cs">
+      <DependentUpon>LiveTileAbbrPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LiveTilePicture\LiveTileNounPicture.xaml.cs">
+      <DependentUpon>LiveTileNounPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LiveTilePicture\LiveTileVerbPicture.xaml.cs">
+      <DependentUpon>LiveTileVerbPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LiveTilePicture\LiveTileWordPicture.xaml.cs">
+      <DependentUpon>LiveTileWordPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\LiveTilePicture\MainTileBackPicture.xaml.cs">
+      <DependentUpon>MainTileBackPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCardCanvas.xaml.cs">
+      <DependentUpon>WordCardCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\OneSideAbbrCard.xaml.cs">
+      <DependentUpon>OneSideAbbrCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\OneSideNounCard.xaml.cs">
+      <DependentUpon>OneSideNounCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\OneSideVerbCard.xaml.cs">
+      <DependentUpon>OneSideVerbCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\OneSideWordCard.xaml.cs">
+      <DependentUpon>OneSideWordCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\TwoSideAbbrCard.xaml.cs">
+      <DependentUpon>TwoSideAbbrCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\TwoSideNounCard.xaml.cs">
+      <DependentUpon>TwoSideNounCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\TwoSideVerbCard.xaml.cs">
+      <DependentUpon>TwoSideVerbCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\WordCard\TwoSideWordCard.xaml.cs">
+      <DependentUpon>TwoSideWordCard.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\10.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\11.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\12.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\13.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\14.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\15.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\16.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\17.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\18.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\19.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\20.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\21.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\22.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\23.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\24.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\25.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\26.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\3.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\4.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\5.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\6.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\7.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\8.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WordSource\StichwortDeutschGrundstufe\9.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UserControl\LiveTilePicture\LiveTileAbbrPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\LiveTilePicture\LiveTileNounPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\LiveTilePicture\LiveTileVerbPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\LiveTilePicture\LiveTileWordPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\LiveTilePicture\MainTileBackPicture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\WordCardCanvas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\OneSideAbbrCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\OneSideNounCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\OneSideVerbCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\OneSideWordCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\TwoSideAbbrCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\TwoSideNounCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\TwoSideVerbCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\WordCard\TwoSideWordCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

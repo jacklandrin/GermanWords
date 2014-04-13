@@ -1,0 +1,163 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GermanWords.Page.LearningSetting"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Name="Pivot_Main" Title="{Binding Path=LocalizedResources._appName, Source={StaticResource LocalizedStrings}}"
+                        SelectionChanged="Pivot_Main_SelectionChanged" Foreground="#FFDE9696">
+            <controls:Pivot.Background>
+                <ImageBrush ImageSource="/images/menuBg.png" Stretch="Fill"/>
+            </controls:Pivot.Background>
+            <!--Pivot item one-->
+            <controls:PivotItem x:Name="exampleItem" Header="{Binding Path=LocalizedResources.CardExample, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <Grid x:Name="Grid_ExampleCard">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,50,0, 0">
+                            <StackPanel Name="StackPanel_ExampleCard" Width="450" Height="300" />
+                            <TextBlock Name="TextBlock_ReversiblePrompt" Margin="0,5,0,0" TextAlignment="Center" FontSize="20" Text="点击卡片以翻转" Foreground="#FF959292">
+                            </TextBlock>
+                        </StackPanel>
+
+                        <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Foreground="#FF959292"
+                                   Text="向左或向右滑动进行设置" />
+                        <CheckBox Grid.Row="2" Name="CheckBox_SkipExample" Content="{Binding Path=LocalizedResources._SkipCardExamplePrompt, Source={StaticResource LocalizedStrings}}" 
+                                  Checked="CheckBox_SkipExample_Checked" Unchecked="CheckBox_SkipExample_Unchecked" BorderBrush="#FF959292" Foreground="#FF959292" Background="#FFFFB3B3" />
+                    </Grid>
+                    <TextBlock Margin="20" x:Name="TextBlock_Explain" Foreground="#FF979797"
+                               Text="默写错误或超时的单词会被自动加入到生词本，生词本里默写正确的单词会被清除。若未开启语音设置，默写时将只有中文，没有听力。每个单词或词组的默写时间为1分钟。" TextWrapping="Wrap" FontSize="25" Visibility="Collapsed"/>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="{Binding Path=LocalizedResources.LearningSetting, Source={StaticResource LocalizedStrings}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="10,0,10,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Margin="0,20,0,0" x:Name="TextBlock_CardType"
+                                   FontSize="30" Foreground="#FF959292"
+                                   Text="{Binding Path=LocalizedResources.CardType, Source={StaticResource LocalizedStrings}}" />
+                        <toolkit:ListPicker Grid.Column="1" Grid.Row="0" Name="ListPicker_CardType" Background="{x:Null}" BorderBrush="#FF959292" Foreground="#FF959292">
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.CardTypeNo1, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.CardTypeNo2, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.CardTypeNo3, Source={StaticResource LocalizedStrings}}" />
+                        </toolkit:ListPicker>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Margin="0,20,0,0" Foreground="#FF959292"
+                                   FontSize="30" Text="{Binding Path=LocalizedResources.WordSource, Source={StaticResource LocalizedStrings}}" />
+                        <toolkit:ListPicker Grid.Column="1" Grid.Row="1" Name="ListPicker_WordSource" 
+                                            ItemsSource="{Binding}"
+                                            ExpansionMode="FullScreenOnly" Foreground="#FF959292" Background="{x:Null}" BorderBrush="#FF959292">
+                            <toolkit:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding title}"
+                                               FontSize="24"/>
+                                </DataTemplate>
+                            </toolkit:ListPicker.ItemTemplate>
+                            <toolkit:ListPicker.FullModeItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding title}"
+                                               Margin="0,10,0,10"
+                                               Style="{StaticResource PhoneTextLargeStyle}"/>
+                                </DataTemplate>
+                            </toolkit:ListPicker.FullModeItemTemplate>
+                        </toolkit:ListPicker>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Margin="0,20,0,0"
+                                   FontSize="30" Foreground="#FF959292"
+                                   Text="{Binding Path=LocalizedResources.WordType, Source={StaticResource LocalizedStrings}}" />
+                        <toolkit:ListPicker Grid.Column="1" Grid.Row="2" Name="ListPicker_WordType" Foreground="#FF959292" BorderBrush="#FF959292">
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.AllWords, Source={StaticResource LocalizedStrings}}"  />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.NounOnly, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.VerbOnly, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.PhraseOnly, Source={StaticResource LocalizedStrings}}" />
+                        </toolkit:ListPicker>
+                        <TextBlock Grid.Column="0" Grid.Row="4" Margin="0,20,0,0"
+                                   FontSize="30" Name="AppearanceOrder_TextBlock" Foreground="#FF959292"
+                                   Text="{Binding Path=LocalizedResources.AppearanceOrder, Source={StaticResource LocalizedStrings}}" />
+                        <toolkit:ListPicker Grid.Column="1" Grid.Row="4" Name="ListPicker_AppearanceOrder" BorderBrush="#FF959292" Foreground="#FF959292">
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Sequence, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Random, Source={StaticResource LocalizedStrings}}" />
+                        </toolkit:ListPicker>
+                        <TextBlock Grid.Column="0" Grid.Row="3" Margin="0,20,0,0"
+                                   FontSize="30" Name="Gender_TextBlock" Visibility="Collapsed"
+                                   Text="{Binding Path=LocalizedResources.Gender, Source={StaticResource LocalizedStrings}}" />
+                        <toolkit:ListPicker Grid.Column="1" Grid.Row="3" Name="ListPicker_Gender" Visibility="Collapsed" BorderBrush="Black" Foreground="Black">
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.AllNoun, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Masculine, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Feminine, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.Nenuter, Source={StaticResource LocalizedStrings}}" />
+                            <toolkit:ListPickerItem Content="{Binding Path=LocalizedResources.MasculineOrNeuter, Source={StaticResource LocalizedStrings}}" />
+                        </toolkit:ListPicker>
+                        <TextBlock Grid.Row="5" Grid.ColumnSpan="2" x:Name="TextBlock_Notify" Foreground="#FF959292"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"
+                                   Text="{Binding Path=LocalizedResources._SeeExamplePrompt, Source={StaticResource LocalizedStrings}}" />
+                    </Grid>
+                    <Grid Grid.Row="1" VerticalAlignment="Bottom">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Name="Button_Return"
+                                Content="{Binding Path=LocalizedResources.Return, Source={StaticResource LocalizedStrings}}"
+                                Click="Button_Return_Click" Foreground="#FF959292" BorderBrush="#FF959292"/>
+                        <Button Grid.Column="1" Name="Button_Start"
+                                Content="{Binding Path=LocalizedResources.Start, Source={StaticResource LocalizedStrings}}"
+                                Click="Button_Start_Click" BorderBrush="#FF959292" Foreground="#FF959292"/>
+                    </Grid>
+                </Grid>       
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,282 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GermanWords.Page.GermanRelated.PersonalPronounTable"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False" Background="Black">
+
+    <!--LayoutRoot 是包含所有页面内容的根网格-->
+    <Grid x:Name="LayoutRoot" Background="#FF5E6CC7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel 包含应用程序的名称和页标题-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0">
+            <TextBlock x:Name="ApplicationTitle" Text="德语词卡 - 人称代词" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - 在此处放置其他内容-->
+        <Grid x:Name="ContentPanel" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Border Grid.Row="0" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="25" Text="Nominativ" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="25" Text="Dativ" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="25" Text="Akkusativ" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ich" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="mir" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="mich" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="2" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="du" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="dir" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="dich" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="3" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="er" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ihm" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="3" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ihn" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="4" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="sie" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ihr" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="4" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="sie" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="5" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="es" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ihm" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="5" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="es" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="6" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="wir" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="6" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="uns" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="6" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="uns" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="7" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ihr" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="7" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="euch" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="7" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="euch" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="8" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="sie" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="8" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="ihnen" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="8" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="sie" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="9" Grid.Column="0"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="Sie" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="9" Grid.Column="1"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="Ihnen" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="9" Grid.Column="2"
+                    BorderBrush="{StaticResource PhoneBorderBrush}" BorderThickness="2">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="Sie" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+ 
+    <!--演示 ApplicationBar 用法的示例代码-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="按钮 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="按钮 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="菜单项 1"/>
+                <shell:ApplicationBarMenuItem Text="菜单项 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="GermanWordsClassLibrary.UserControl.WordCard.OneSideVerbCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="300" d:DesignWidth="450">
+    
+    <Grid x:Name="LayoutRoot"
+          Height="300" Width="450" Tap="LayoutRoot_Tap" RenderTransformOrigin="0,0.5" Opacity="0.75">
+        <Grid Background="White" Opacity="0.75">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Name="TextBlock_Line0" VerticalAlignment="Top" TextAlignment="Right" FontSize="30" Text="N." Foreground="#FF727272" />
+                <TextBlock Grid.Row="0" Name="TextBlock_Line1" VerticalAlignment="Center" FontSize="80" Text="heißen" Foreground="#FF727272" />
+                <TextBlock Grid.Row="1" Name="TextBlock_Line2" VerticalAlignment="Center" TextAlignment="Right" FontSize="40" Text="heißt, hieß" Foreground="#FF727272" />
+                <TextBlock Grid.Row="2" Name="TextBlock_Line3" VerticalAlignment="Center" TextAlignment="Right" FontSize="40" Text="hat gehießen" Foreground="#FF727272" />
+                <TextBlock Grid.Row="3" Name="TextBlock_Line4" VerticalAlignment="Center" TextAlignment="Right" FontSize="35" Text="叫，称呼" Foreground="#FF727272" />
+            </Grid>
+            <Grid.RenderTransform>
+                <ScaleTransform x:Name="ScaleTransform_Layout" />
+            </Grid.RenderTransform>
+        </Grid>
+    </Grid>
+</UserControl>

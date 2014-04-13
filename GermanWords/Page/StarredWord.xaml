@@ -1,0 +1,107 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GermanWords.Page.StarredWord"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Title="德语词卡" Foreground="#FFDE9696">
+            <controls:Pivot.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/images/menuBg.png"/>
+            </controls:Pivot.Background>
+            <!--Pivot item one-->
+            <controls:PivotItem Header="生词本">
+                <Grid>
+                    <TextBlock Name="TextBlock_NoDataPrompt" TextAlignment="Center" VerticalAlignment="Center"
+                               FontSize="30" Text="（生词本中没有单词）" Foreground="#FF979797"/>
+                    <phone:LongListSelector  Name="ListBox_StarredWord" SelectedItem="{Binding ListBoxData,Mode=TwoWay}"
+                             SelectionChanged="IgnoreSelectionChange">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <UserControl Content="{Binding WordCard}"/>
+                                    <Grid Margin="0,-10,0,15">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" FontSize="20"
+                                                   Text="{Binding SourceTitle}" Foreground="#FF979797" />
+                                        <TextBlock Grid.Column="1" TextAlignment="Right" FontSize="20"
+                                                   Text="{Binding AddTimeString}" Foreground="#FF979797" />
+                                    </Grid>
+                                    <toolkit:ContextMenuService.ContextMenu>
+                                        <toolkit:ContextMenu Unloaded="ContextMenu_Unloaded">
+                                            <toolkit:MenuItem Header="删除" Tag="{Binding}" Click="MenuItem_Delete_Click"/>
+                                        </toolkit:ContextMenu>
+                                    </toolkit:ContextMenuService.ContextMenu>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="选项">
+                <StackPanel>
+                    <TextBlock FontSize="40" Text="词卡类型" Foreground="#FF979797"/>
+                    <toolkit:ListPicker Name="ListPicker_CardType" Margin="20,0,10,0" BorderBrush="#FF979797" Foreground="#FF979797">
+                        <toolkit:ListPickerItem Margin="20,0,0,0" Content="1号词卡 - 单面词卡" />
+                        <toolkit:ListPickerItem Margin="20,0,0,0" Content="2号词卡 - 双面词卡 德语正面" />
+                        <toolkit:ListPickerItem Margin="20,0,0,0" Content="3号词卡 - 双面词卡 德语背面" />
+                    </toolkit:ListPicker>
+
+                    <TextBlock FontSize="40" Text="显示顺序" Margin="0,50,0,0" Foreground="#FF979797"/>
+                    <Grid Margin="20,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+
+                        <toolkit:ListPicker Grid.Column="0" Name="ListPicker_OrderBy" BorderBrush="#FF979797" Foreground="#FF979797">
+                                            
+                            <toolkit:ListPickerItem Margin="20,0,0,0" Content="按添加时间" />
+                            <toolkit:ListPickerItem Margin="20,0,0,0" Content="按字母表" />
+                        </toolkit:ListPicker>
+                        <toolkit:ListPicker Grid.Column="1" Name="ListPicker_AscOrDesc" BorderBrush="#FF979797" Foreground="#FF979797">
+                            <toolkit:ListPickerItem Margin="20,0,0,0" Content="升序" />
+                            <toolkit:ListPickerItem Margin="20,0,0,0" Content="降序" />
+                        </toolkit:ListPicker>
+                    </Grid>
+                </StackPanel>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

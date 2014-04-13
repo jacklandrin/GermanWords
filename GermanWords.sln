@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GermanWords", "GermanWords\GermanWords.csproj", "{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GermanWordsClassLibrary", "GermanWordClassLibrary\GermanWordsClassLibrary.csproj", "{271C3328-99DB-48FE-9E5A-9C44B20FE442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordScheduledTaskAgent", "WordScheduledTaskAgent\WordScheduledTaskAgent.csproj", "{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Release|ARM.ActiveCfg = Release|Any CPU
+		{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}.Release|x86.ActiveCfg = Release|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Release|ARM.ActiveCfg = Release|Any CPU
+		{271C3328-99DB-48FE-9E5A-9C44B20FE442}.Release|x86.ActiveCfg = Release|Any CPU
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Debug|ARM.ActiveCfg = Debug|ARM
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Debug|ARM.Build.0 = Debug|ARM
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Debug|x86.ActiveCfg = Debug|x86
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Debug|x86.Build.0 = Debug|x86
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Release|ARM.ActiveCfg = Release|ARM
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Release|ARM.Build.0 = Release|ARM
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Release|x86.ActiveCfg = Release|x86
+		{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

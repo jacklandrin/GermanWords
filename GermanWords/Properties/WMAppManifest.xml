@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="zh-CN" />
+  <Languages xmlns="">
+    <Language code="zh-CN" />
+  </Languages>
+  <App xmlns="" ProductID="{b61dbd4d-7f3b-45af-8c2d-fe28144363b1}" Title="德语词卡" RuntimeType="Silverlight" Version="1.4.7.0" Genre="apps.normal" Author="Nikos Liu" Description="" Publisher="Jack Liu" BitsPerPixel="32" PublisherID="{ed63e79f-9614-4a44-ba37-dd0fe82288bc}">
+    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
+      <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="/MainPage.xaml" />
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="WordScheduledTaskAgent" Source="WordScheduledTaskAgent" Type="WordScheduledTaskAgent.ScheduledAgent" />
+      </ExtendedTask>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="GermanWordsToken" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsResource="false" IsRelative="true">Background.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsResource="false" IsRelative="true">Background.png</BackgroundImageURI>
+          <Title>德语词卡</Title>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
+          <DeviceLockImageURI>
+          </DeviceLockImageURI>
+          <HasLarge>false</HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>

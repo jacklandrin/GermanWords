@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="GermanWordsClassLibrary.UserControl.WordCard.TwoSideAbbrCard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="300" d:DesignWidth="450">
+
+    <Grid x:Name="LayoutRoot"
+          Width="450" Height="300" RenderTransformOrigin="0,0.5"
+          Tap="LayoutRoot_Tap" >
+        <Grid Background="White" Opacity="0.75" >
+        <Grid Name="Grid_Front" Margin="10" Opacity="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       VerticalAlignment="Top" TextAlignment="Right"
+                       FontSize="30" Text="" Foreground="#FF727272" />
+            <TextBlock Grid.Row="0" Name="TextBlock_FrontLine1"
+                       TextAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="120" Text="亲启" Foreground="#FF727272" />
+        </Grid>
+        </Grid>
+        <Grid Background="White" Opacity="0.75" >
+        <Grid Name="Grid_Back" Margin="10" Opacity="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Name="TextBlock_BackLine1"
+                       VerticalAlignment="Center" TextAlignment="Center"
+                       FontSize="100" Text="z.H." Foreground="#FF383838" />
+            <TextBlock Grid.Row="1" Name="TextBlock_BackLine2"
+                       VerticalAlignment="Center" TextAlignment="Center"
+                       FontSize="80" Text="zu Händen" Foreground="#FF383838" />
+        </Grid>
+        </Grid>
+        <Grid.RenderTransform>
+            <ScaleTransform x:Name="ScaleTransform_Layout" />
+        </Grid.RenderTransform>
+        <Grid.Projection>
+            <PlaneProjection />
+        </Grid.Projection>
+        <Grid.Resources>
+            <Storyboard x:Name="StoryBoard_TurnBack">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot"
+                                               Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)">
+                    <LinearDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.1" Value="-20" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="90" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="-90" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.9" Value="20" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity">
+                    <LinearDoubleKeyFrame KeyTime="0:0:0" Value="100" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="100" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity">
+                    <LinearDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="100" />
+                    <LinearDoubleKeyFrame KeyTime="0:0:1" Value="100" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </Grid.Resources>
+        
+    </Grid>
+</UserControl>

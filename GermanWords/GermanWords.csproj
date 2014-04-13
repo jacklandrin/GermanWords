@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{695B1EAA-4237-4AEC-854B-EE75AB7CDC21}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GermanWords</RootNamespace>
+    <AssemblyName>GermanWords</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>GermanWords.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>GermanWords.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
+      <HintPath>..\..\DeatschWelle\DeatschWelle\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP8">
+      <HintPath>..\..\DeatschWelle\DeatschWelle\GalaSoft.MvvmLight.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\DeutschWelle\DeutschWelle\Bin\Release\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\toolkit\Bin\WP8\Release\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="SinaBase">
+      <HintPath>Bin\Debug\SinaBase.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.XPath">
+      <HintPath>..\..\DeutschWelle\DeutschWelle\Bin\Release\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="WeiboSdk">
+      <HintPath>Bin\Debug\WeiboSdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeutschWelle\AgilityData.cs" />
+    <Compile Include="DeutschWelle\ArticalPage.xaml.cs" />
+    <Compile Include="DeutschWelle\HttpGet.cs" />
+    <Compile Include="DeutschWelle\DWTileListView.xaml.cs" />
+    <Compile Include="DeutschWelle\MediaElementBinder.cs" />
+    <Compile Include="DeutschWelle\ScrollableTextBlock.cs" />
+    <Compile Include="DeutschWelle\SpeedMode.cs" />
+    <Compile Include="DeutschWelle\StatePlay.cs" />
+    <Compile Include="DeutschWelle\TimeSpanConverter.cs" />
+    <Compile Include="DeutschWelle\ViewModels\DWArticalModel.cs" />
+    <Compile Include="DeutschWelle\ViewModels\DWListItemModel.cs" />
+    <Compile Include="DeutschWelle\ViewModels\DWListModel.cs" />
+    <Compile Include="DeutschWelle\VoicePlayControl.xaml.cs" />
+    <Compile Include="DeutschWelle\WP7Http\UrlDecoder.cs" />
+    <Compile Include="DeutschWelle\WP7Http\UrlEncoder.cs" />
+    <Compile Include="DeutschWelle\WP7Http\WP7HttpEventArgs.cs" />
+    <Compile Include="DeutschWelle\WP7Http\WP7HttpRequest.cs" />
+    <Compile Include="DeutschWelle\WP8AsyncWebClientExtensions.cs" />
+    <Compile Include="Helper\BackgroundAgentHelper.cs" />
+    <Compile Include="Page\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\DictationPage.xaml.cs">
+      <DependentUpon>DictationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\GermanRelated\AdjektiveTable.xaml.cs">
+      <DependentUpon>AdjektiveTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\GermanRelated\DefiniteArticleTable.xaml.cs">
+      <DependentUpon>DefiniteArticleTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ListenPage.xaml.cs">
+      <DependentUpon>ListenPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\GermanRelated\PersonalPronounTable.xaml.cs">
+      <DependentUpon>PersonalPronounTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\LiveTileSetting.xaml.cs">
+      <DependentUpon>LiveTileSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SNSSetting.xaml.cs">
+      <DependentUpon>SNSSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SpeechSetting.xaml.cs">
+      <DependentUpon>SpeechSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\StarredWord.xaml.cs">
+      <DependentUpon>StarredWord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\StudyHistory.xaml.cs">
+      <DependentUpon>StudyHistory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\WordCardLearning.xaml.cs">
+      <DependentUpon>WordCardLearning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\LearningSetting.xaml.cs">
+      <DependentUpon>LearningSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\WordTodaySetting.xaml.cs">
+      <DependentUpon>WordTodaySetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\LocalizedStrings.cs" />
+    <Compile Include="Utility\TiltEffect.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="DeutschWelle\ArticalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DeutschWelle\DWTileListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DeutschWelle\VoicePlayControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\DictationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\GermanRelated\AdjektiveTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\GermanRelated\DefiniteArticleTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\ListenPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\GermanRelated\PersonalPronounTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\LearningSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\LiveTileSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\SNSSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\SpeechSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\StarredWord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\StudyHistory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\WordCardLearning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\WordTodaySetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\microphone.png" />
+    <Content Include="Assets\AppBar\sync.png" />
+    <Content Include="images\menuBg.png" />
+    <Content Include="images\normal.png" />
+    <Content Include="images\pause.png" />
+    <Content Include="images\play.png" />
+    <Content Include="images\settingBg.png" />
+    <Content Include="images\slow.png" />
+    <Content Include="images\speak.png" />
+    <Content Include="MainBackground.jpg" />
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Picture\starred.png" />
+    <Content Include="Resource\Picture\unstarred.png" />
+    <Content Include="Resource\tables.html" />
+    <Content Include="WeiboIcons\appbar_publish.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WeiboIcons\appbar_TakePhoto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WeiboIcons\appbar_topic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="PanoramaBackground.png" />
+    <Content Include="Resource\ApplicationBarIcon\CheckMark.png" />
+    <Content Include="Resource\ApplicationBarIcon\LeftArrow.png" />
+    <Content Include="Resource\ApplicationBarIcon\RightArrow.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GermanWordClassLibrary\GermanWordsClassLibrary.csproj">
+      <Project>{271C3328-99DB-48FE-9E5A-9C44B20FE442}</Project>
+      <Name>GermanWordsClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordScheduledTaskAgent\WordScheduledTaskAgent.csproj">
+      <Project>{48E35D5D-C03E-4C81-9EDC-3286D3CE13A6}</Project>
+      <Name>WordScheduledTaskAgent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

@@ -1,0 +1,219 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="GermanWords.Page.StudyHistory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot Name="Pivot_Main" Title="德语词卡 - 学习记录" Foreground="#FFDE9696">
+            <controls:Pivot.Background>
+                <ImageBrush Stretch="Fill" ImageSource="/images/menuBg.png"/>
+            </controls:Pivot.Background>
+            <!--Pivot item one-->
+            <controls:PivotItem Header="日">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Foreground="#FF979797"
+                                       VerticalAlignment="Center" FontSize="70" Text="今日" />
+                            <TextBlock Grid.Column="1" Name="TextBlock_TodayTotalMinutes"
+                                       Foreground="{StaticResource PhoneAccentBrush}" FontSize="100" Text="0" />
+                            <TextBlock Grid.Column="2"
+                                       VerticalAlignment="Bottom" FontSize="30" Text="分钟" />
+                        </Grid>
+                        <ListBox Name="ListBox_TodayDetailed" Margin="0,20,0,0"
+                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                 SelectionChanged="IgnoreSelectionChange">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="430">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#FF979797"
+                                                   HorizontalAlignment="Right" FontSize="24" Text="{Binding ContentTitle}"/>
+                                        <TextBlock Grid.Column="1" Foreground="#FF979797"
+                                                   HorizontalAlignment="Right" FontSize="24" Text="{Binding DurationMinute}"/>
+                                        <TextBlock Grid.Column="2" Margin="0,0,20,0" Foreground="#FF979797"
+                                                   HorizontalAlignment="Right" FontSize="24" Text="分钟"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <ListBox Name="ListBox_DayMinutes" Margin="0,20,0,0"
+                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                 SelectionChanged="IgnoreSelectionChange">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="430" Margin="0,20,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#FF979797"
+                                                   VerticalAlignment="Center" FontSize="40" Text="{Binding ContentTitle}" />
+                                        <TextBlock Grid.Column="1" Foreground="#FF979797"
+                                                   FontSize="50" Text="{Binding DurationMinute}" >
+                                        </TextBlock>
+                                        <TextBlock Grid.Column="2" Foreground="#FF979797"
+                                       VerticalAlignment="Bottom" FontSize="30" Text="分钟"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PivotItem>
+
+            <!--Pivot item two-->
+            <controls:PivotItem Header="月">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Foreground="#FF979797"
+                                       VerticalAlignment="Center" FontSize="70" Text="本月" />
+                            <TextBlock Grid.Column="1" Name="TextBlock_ThisMonthTotalMinutes"
+                                       Foreground="{StaticResource PhoneAccentBrush}" FontSize="100" Text="0" />
+                            <TextBlock Grid.Column="2"
+                                       VerticalAlignment="Bottom" FontSize="30" Text="分钟" />
+                        </Grid>
+                        <ListBox Name="ListBox_ThisMonthDetailed" Margin="0,20,0,0"
+                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                 SelectionChanged="IgnoreSelectionChange" Foreground="Black">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="430">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#FF979797"
+                                                   HorizontalAlignment="Right" FontSize="24" Text="{Binding ContentTitle}"/>
+                                        <TextBlock Grid.Column="1" Foreground="#FF979797"
+                                                   HorizontalAlignment="Right" FontSize="24" Text="{Binding DurationMinute}"/>
+                                        <TextBlock Grid.Column="2" Margin="0,0,20,0" Foreground="#FF979797"
+                                                   HorizontalAlignment="Right" FontSize="24" Text="分钟"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <ListBox Name="ListBox_MonthMinutes" Margin="0,20,0,0"
+                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                 SelectionChanged="IgnoreSelectionChange" Background="Black">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="430" Margin="0,20,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0"
+                                                   VerticalAlignment="Center" FontSize="40" Text="{Binding ContentTitle}" />
+                                        <TextBlock Grid.Column="1"
+                                                   Foreground="{StaticResource PhoneAccentBrush}"
+                                                   FontSize="50" Text="{Binding DurationMinute}" />
+                                        <TextBlock Grid.Column="2"
+                                       VerticalAlignment="Bottom" FontSize="30" Text="分钟" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PivotItem>
+
+            <!--Pivot item three-->
+            <controls:PivotItem Header="总计">
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical" Margin="10,0,10,0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Foreground="#FF979797"
+                                       VerticalAlignment="Center" FontSize="70" Text="总计" />
+                            <TextBlock Grid.Column="1" Name="TextBlock_TotalMinutes"
+                                       Foreground="{StaticResource PhoneAccentBrush}" FontSize="100" Text="0" />
+                            <TextBlock Grid.Column="2"
+                                       VerticalAlignment="Bottom" FontSize="30" Text="分钟" />
+                        </Grid>
+                        <TextBlock Name="TextBlock_FromDate" HorizontalAlignment="Right" Text="" />
+                        <ListBox Name="ListBox_TotalDetailed" Margin="0,30,0,0"
+                                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                 SelectionChanged="IgnoreSelectionChange" Background="{x:Null}" Foreground="Black">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,20,0,0" Orientation="Vertical" Width="430">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" FontSize="24" Text="{Binding ContentTitle}" Foreground="#FF979797"/>
+                                            <TextBlock Grid.Column="1" FontSize="24" Text="{Binding DurationMinute}" Foreground="#FF979797"/>
+                                            <TextBlock Grid.Column="2" FontSize="24" Text="分钟" Foreground="#FF979797"/>
+                                        </Grid>
+                                        <ProgressBar Margin="0,10,0,0" Value="{Binding EntryId}" Maximum="100" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <Button Margin="0,50,0,0" Content="清空学习记录" 
+                                Click="Button_ClearHistory_Click" BorderBrush="#FF979797" Foreground="#FF979797"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>
